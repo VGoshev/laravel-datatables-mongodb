@@ -37,8 +37,8 @@
     },
     "minimum-stability": "stable",
     "require-dev": {
-        "Orchestra/Testbench": "^3.5",
-        "squizlabs/php_codesniffer": "^3.1"
+        "orchestra/testbench": "^7",
+        "squizlabs/php_codesniffer": "^3.7"
     },
     "scripts": {
         "test": "vendor/bin/phpunit",

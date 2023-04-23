@@ -10,7 +10,7 @@ class MongodbDataTable extends MongodbQueryDataTable
     /**
      * @var \Jenssegers\Mongodb\Eloquent\Builder
      */
-    protected $query;
+    protected \Illuminate\Contracts\Database\Query\Builder $query;
 
     /**
      * Can the DataTable engine be created with these parameters.
@@ -18,7 +18,7 @@ class MongodbDataTable extends MongodbQueryDataTable
      * @param mixed $source
      * @return boolean
      */
-    public static function canCreate($source)
+    public static function canCreate($source): bool
     {
         return $source instanceof Model || $source instanceof Builder ||
             strpos(get_class($source), 'Jenssegers\Mongodb\Relations') !== false;
@@ -54,7 +54,7 @@ class MongodbDataTable extends MongodbQueryDataTable
      *
      * @return string
      */
-    protected function getPrimaryKeyName()
+    protected function getPrimaryKeyName(): string
     {
         return $this->query->getModel()->getKeyName();
     }

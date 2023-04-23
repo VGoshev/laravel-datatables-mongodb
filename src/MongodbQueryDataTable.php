@@ -197,7 +197,7 @@ class MongodbQueryDataTable extends QueryDataTable
             });
     }
 
-    protected function applyOrderColumn(string $column, string $orderable): void
+    protected function applyOrderColumn(string $column, array $orderable): void
     {
         $this->query->orderBy($column, $orderable['direction']);
     }

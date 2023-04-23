@@ -16,7 +16,7 @@ class MongodbQueryDataTable extends QueryDataTable
      * @param mixed $source
      * @return boolean
      */
-    public static function canCreate($source)
+    public static function canCreate($source): bool
     {
         return $source instanceof Builder;
     }
@@ -29,19 +29,19 @@ class MongodbQueryDataTable extends QueryDataTable
         parent::__construct($builder);
     }
 
-    public function count()
+    public function count(): int
     {
         $builder = clone $this->query;
 
         return $builder->count();
     }
 
-    protected function wrap($column)
+    protected function wrap($column): string
     {
         return $column;
     }
 
-    protected function applyFilterColumn($query, $columnName, $keyword, $boolean = 'and')
+    protected function applyFilterColumn($query, string $columnName, string $keyword, string $boolean = 'and'): void
     {
         $query    = $this->getBaseQueryBuilder($query);
         $callback = $this->columnDef['filter'][$columnName]['method'];
@@ -70,7 +70,7 @@ class MongodbQueryDataTable extends QueryDataTable
         return $instance;
     }
 
-    protected function compileColumnSearch($i, $column, $keyword)
+    protected function compileColumnSearch(int $i, string $column, string $keyword): void
     {
         if ($this->request->isRegex($i)) {
             $this->regexColumnSearch($column, $keyword);
@@ -79,17 +79,17 @@ class MongodbQueryDataTable extends QueryDataTable
         }
     }
 
-    protected function regexColumnSearch($column, $keyword)
+    protected function regexColumnSearch(string $column, string $keyword): void
     {
         $this->query->where($column, 'regex', '/' . $keyword . '/' . ($this->config->isCaseInsensitive() ? 'i' : ''));
     }
 
-    protected function castColumn($column)
+    protected function castColumn(string $column): string
     {
         return $column;
     }
 
-    protected function compileQuerySearch($query, $column, $keyword, $boolean = 'or')
+    protected function compileQuerySearch($query, string $column, string $keyword, string $boolean = 'or'): void
     {
         $column = $this->castColumn($column);
         $value  = $this->prepareKeyword($keyword);
@@ -101,12 +101,12 @@ class MongodbQueryDataTable extends QueryDataTable
         $query->{$boolean . 'Where'}($column, 'regex', $value);
     }
 
-    protected function addTablePrefix($query, $column)
+    protected function addTablePrefix($query, $column): string
     {
         return $this->wrap($column);
     }
 
-    protected function prepareKeyword($keyword)
+    protected function prepareKeyword(string $keyword): string
     {
         if ($this->config->isWildcard()) {
             $keyword = Helper::wildcardString($keyword, '.*', $this->config->isCaseInsensitive());
@@ -132,7 +132,7 @@ class MongodbQueryDataTable extends QueryDataTable
      * @param array  $bindings
      * @return $this
      */
-    public function orderColumns(array $columns, $sql, $bindings = [])
+    public function orderColumns(array $columns, $sql, $bindings = []): static
     {
         return $this;
     }
@@ -147,7 +147,7 @@ class MongodbQueryDataTable extends QueryDataTable
      * @return $this
      * @internal string $1 Special variable that returns the requested order direction of the column.
      */
-    public function orderColumn($column, $sql, $bindings = [])
+    public function orderColumn($column, $sql, $bindings = []): static
     {
         return $this;
     }
@@ -158,12 +158,12 @@ class MongodbQueryDataTable extends QueryDataTable
      *
      * @return $this
      */
-    public function orderByNullsLast()
+    public function orderByNullsLast(): static
     {
         return $this;
     }
 
-    public function paging()
+    public function paging(): void
     {
         $limit = (int) ($this->request->input('length') > 0 ? $this->request->input('length') : 10);
         if (is_callable($this->limitCallback)) {
@@ -175,7 +175,7 @@ class MongodbQueryDataTable extends QueryDataTable
         }
     }
 
-    protected function defaultOrdering()
+    protected function defaultOrdering(): void
     {
         collect($this->request->orderableColumns())
             ->map(function ($orderable) {
@@ -197,7 +197,7 @@ class MongodbQueryDataTable extends QueryDataTable
             });
     }
 
-    protected function applyOrderColumn($column, $orderable)
+    protected function applyOrderColumn(string $column, array $orderable): void
     {
         $this->query->orderBy($column, $orderable['direction']);
     }

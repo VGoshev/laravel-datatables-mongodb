@@ -3,12 +3,12 @@
 namespace Pimlie\DataTables\Tests;
 
 use Illuminate\Http\JsonResponse;
+use Pimlie\DataTables\MongodbDataTable;
+use Pimlie\DataTables\Tests\Models\Role;
+use Pimlie\DataTables\Tests\Models\User;
+use Pimlie\DataTables\Tests\TestCase;
 use Yajra\DataTables\DataTables;
 use Yajra\DataTables\Facades\DataTables as DatatablesFacade;
-use Pimlie\DataTables\MongodbDataTable;
-use Pimlie\DataTables\Tests\TestCase;
-use Pimlie\DataTables\Tests\Models\User;
-use Pimlie\DataTables\Tests\Models\Role;
 
 class MongodbDataTableTest extends TestCase
 {

@@ -4,10 +4,10 @@ namespace Pimlie\DataTables\Tests;
 use DB;
 use Illuminate\Http\JsonResponse;
 use MongoDB\Laravel\Query\Builder;
-use Yajra\DataTables\DataTables;
-use Yajra\DataTables\Facades\DataTables as DatatablesFacade;
 use Pimlie\DataTables\MongodbQueryDataTable;
 use Pimlie\DataTables\Tests\TestCase;
+use Yajra\DataTables\DataTables;
+use Yajra\DataTables\Facades\DataTables as DatatablesFacade;
 
 class MongodbQueryDataTableTest extends TestCase
 {

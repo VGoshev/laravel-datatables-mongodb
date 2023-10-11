@@ -2,9 +2,9 @@
 
 namespace Pimlie\DataTables\Tests;
 
-use Yajra\DataTables\DataTables;
 use Pimlie\DataTables\Tests\Models\Post;
 use Pimlie\DataTables\Tests\TestCase;
+use Yajra\DataTables\DataTables;
 
 // Skip these tests, $lookup/joins are not supported
 abstract class BelongsToRelationTest extends TestCase

@@ -2,10 +2,10 @@
 
 namespace Pimlie\DataTables\Tests;
 
-use Pimlie\DataTables\Tests\Models\User;
-use Pimlie\DataTables\Tests\Models\Role;
-use Pimlie\DataTables\Tests\Models\Post;
 use Pimlie\DataTables\Tests\Models\Heart;
+use Pimlie\DataTables\Tests\Models\Post;
+use Pimlie\DataTables\Tests\Models\Role;
+use Pimlie\DataTables\Tests\Models\User;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {

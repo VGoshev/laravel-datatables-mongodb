@@ -2,9 +2,9 @@
 
 namespace Pimlie\DataTables;
 
+use Illuminate\Support\Str;
 use MongoDB\Laravel\Eloquent\Builder as MoloquentBuilder;
 use MongoDB\Laravel\Query\Builder;
-use Illuminate\Support\Str;
 use Yajra\DataTables\QueryDataTable;
 use Yajra\DataTables\Utilities\Helper;
 

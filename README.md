@@ -1,8 +1,8 @@
 # Laravel DataTables Mongodb Plugin
 
-[![Latest Stable Version](https://img.shields.io/packagist/v/pimlie/laravel-datatables-mongodb.svg)](https://packagist.org/packages/pimlie/laravel-datatables-mongodb)
-[![Total Downloads](https://img.shields.io/packagist/dt/pimlie/laravel-datatables-mongodb.svg)](https://packagist.org/packages/pimlie/laravel-datatables-mongodb)
-[![License](https://img.shields.io/github/license/pimlie/laravel-datatables-mongodb.svg)](https://packagist.org/packages/pimlie/laravel-datatables-mongodb)
+[![Latest Stable Version](https://img.shields.io/packagist/v/vgoshev/laravel-datatables-mongodb.svg)](https://packagist.org/packages/vgoshev/laravel-datatables-mongodb)
+[![Total Downloads](https://img.shields.io/packagist/dt/vgoshev/laravel-datatables-mongodb.svg)](https://packagist.org/packages/vgoshev/laravel-datatables-mongodb)
+[![License](https://img.shields.io/github/license/vgoshev/laravel-datatables-mongodb.svg)](https://packagist.org/packages/vgoshev/laravel-datatables-mongodb)
 
 This package is a plugin for [Laravel DataTables](https://github.com/yajra/laravel-datatables) to support Mongodb using [Laravel Mongodb](https://github.com/mongodb/laravel-mongodb/)
 
@@ -16,7 +16,7 @@ This package is a plugin for [Laravel DataTables](https://github.com/yajra/larav
 This plugin provides most functionalities described in the Laravel Datatables documentation. See `Known issues` below
 
 ## Installation
-`composer require pimlie/laravel-datatables-mongodb:^1.1`
+`composer require vgoshev/laravel-datatables-mongodb:^1.1`
 
 ## Configure
 
@@ -29,8 +29,8 @@ Unfortunately we cant use auto-discovery yet, this package will be discoverd bef
 ~~> Although this package has a dependency on laravel-datatables, you need to explictly require the package as auto-discovery works based on the packages listed in the dependencies section of your composer.json.~~
 
 ```
-composer require yajra/laravel-datatables-oracle:"~8.0"
-composer require pimlie/laravel-datatables-mongodb:^1.1
+composer require yajra/laravel-datatables-oracle:"^10.0"
+composer require vgoshev/laravel-datatables-mongodb:^1.1
 ```
 
 so you __either__ you have to add the service provide:

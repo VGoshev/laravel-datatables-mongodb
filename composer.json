@@ -1,5 +1,5 @@
 {
-    "name": "pimlie/laravel-datatables-mongodb",
+    "name": "vgoshev/laravel-datatables-mongodb",
     "description": "Laravel DataTables plugin to support Mongodb",
     "keywords": [
         "laravel",
@@ -16,7 +16,7 @@
     "require": {
         "php": "^8.0.2",
         "yajra/laravel-datatables-oracle": "^10.0",
-        "jenssegers/mongodb" : "^3.9"
+        "mongodb/laravel-mongodb" : "^3.9"
     },
     "autoload": {
         "psr-4": {
